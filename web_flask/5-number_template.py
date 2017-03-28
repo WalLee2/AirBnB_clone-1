@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from flask import Flask, url_for
+from flask import Flask, url_for, render_template
 app = Flask(__name__)
 
 
@@ -35,6 +35,11 @@ def replace_py(text="is cool"):
 @app.route('/number/<int:n>', strict_slashes=False)
 def only_num(n):
     return "%d is a number" % n
+
+
+@app.route('/number_template/<int:n>', strict_slashes=False)
+def num_temp(n):
+    return render_template('5-number.html', n=n)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
