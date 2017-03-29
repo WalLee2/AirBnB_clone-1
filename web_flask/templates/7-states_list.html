@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<HTML lang="en">
+  <HEAD>
+    <TITLE>HBNB</TITLE>
+  </HEAD>
+  <BODY>
+    <H1>States</H1>
+    <UL>
+      {% for item in states_list|sort %}
+      <LI>{{"State: %d: <B>%s</B>" % state.id, state.name}}</LI>
+      {% endfor %}
+  </BODY>
