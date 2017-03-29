@@ -44,3 +44,6 @@ class FileStorage:
 
     def delete(self, obj=None):
         FileStorage.__objects.pop(obj, None)
+
+    def close(self):
+        self.reload()

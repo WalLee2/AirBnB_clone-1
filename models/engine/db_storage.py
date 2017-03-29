@@ -13,6 +13,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
+from sqlalchemy.orm import scoped_session
 
 
 class DBStorage:
@@ -74,5 +75,7 @@ class DBStorage:
        reload
         """
         Base.metadata.create_all(self.__engine)
-        Session = sessionmaker(bind=self.__engine)
-        self.__session = Session()
+        self.__session = scoped_session(sessionmaker(bind=self.__engine))
+
+    def close(self):
+        self.__session.remove()
