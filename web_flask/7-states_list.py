@@ -7,14 +7,15 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
+@app.route('/states_list')
+def states_list():
+    my_list = storage.all("State")
+    return render_template('7-states_list.html', my_list=my_list)
+
+
 @app.teardown_appcontext
-def rmSession():
+def rmSession(self):
     storage.close()
-
-
-@app.route('/states_list', strict_slahes=False)
-def states_list(states_list):
-    return render_template('7-states_list.html', states_list=states_list)
 
 
 if __name__ == "__main__":
