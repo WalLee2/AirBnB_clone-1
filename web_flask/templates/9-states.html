@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>HBNB</TITLE>
+    </HEAD>
+    <BODY>
+      {% if my_id == "None" %}
+      <H1>Not found!</H1>
+      {% elif my_id == "no_need" %}
+      <H1>States</H1>
+         <UL>
+	   {% for state in my_ids|sort(attribute="name") %}
+	   <LI>{{"%s:" % state.id}} <B>{{"%s" % state.name}}</B>
+	   {% endfor %}
+	 </UL>
+      {% else %}
+      <H1>{{"State: %s" % my_ids.name}}</H1>
+      <H3>Cities:</H3>
+         <UL>
+	   {% for city in my_ids.cities|sort(attribute="name") %}
+	   <LI>{{"%s:" % city.id}} <B>{{"%s" % city.name}}</B></LI>
+	   {% endfor %}
+	 </UL>
+     {% endif %}
+   </BODY>
+</HTML>
