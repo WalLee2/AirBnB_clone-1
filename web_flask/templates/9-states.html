@@ -10,7 +10,7 @@
       <H1>States</H1>
          <UL>
 	   {% for state in my_ids|sort(attribute="name") %}
-	   <LI>{{"%s:" % state.id}} <B>{{"%s" % state.name}}</B>
+	   <LI>{{"%s:" % state.id}} <B>{{"%s" % state.name}}</B></LI>
 	   {% endfor %}
 	 </UL>
       {% else %}
