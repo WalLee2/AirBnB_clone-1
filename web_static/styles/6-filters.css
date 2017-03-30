@@ -89,4 +89,6 @@ li {
     border-radius: 4px;
     float: left;
     padding-bottom: 30px;
+    overflow: scroll;
+    max-height: 300px;
 }
