@@ -11,6 +11,7 @@ def cities():
     my_list = storage.all("State").values()
     return render_template('9-states.html', my_id="no_need", my_ids=my_list)
 
+
 @app.route('/states/<id>')
 def city_ids(id):
     my_list = storage.all("State").values()
@@ -19,6 +20,7 @@ def city_ids(id):
             found = x
             return render_template('9-states.html', my_id=found, my_ids=x)
     return render_template('9-states.html', my_id="None", my_ids=x)
+
 
 @app.teardown_appcontext
 def teardown(self):
