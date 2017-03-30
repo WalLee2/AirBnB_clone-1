@@ -20,7 +20,7 @@
 	    {% for state in states_list|sort(attribute='name') %}
 	    <li> <h2>{{ state.name }}</h2>
 	      <ul>
-	        {% for city in states_list.cities|sort(attribute='name') %}
+	      {% for city in state.cities|sort(attribute='name') %}
 	        <li> {{ city.name }} </li>
 	      {% endfor %}
 	      </ul>
