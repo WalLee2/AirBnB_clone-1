@@ -12,7 +12,15 @@ class FileStorage:
         self.reload()
 
     def all(self, cls=None):
-        return FileStorage.__objects
+        my_obj = {}
+        if cls is None:
+            return FileStorage.__objects
+        else:
+            for name in FileStorage.__objects.__class__:
+                my_name = FileStorage.__objects.__class__.__name__
+                if my_name == cls:
+                    my_obj.update(my_name)
+            return my_obj
 
     def new(self, obj):
         if obj is not None:
