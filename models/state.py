@@ -22,8 +22,8 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             my_list = storage.all("City").values()
-            c_list = [city_list for city in my_list if self.id == city.state_id]
-            return c_list
+            lists = [city_list for city in my_list if self.id == city.state_id]
+            return lists
 
     def __init__(self, *args, **kwargs):
         super(State, self).__init__(*args, **kwargs)
